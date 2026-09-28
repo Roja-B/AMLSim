@@ -48,7 +48,7 @@ public class BipartiteTypology extends AMLTypology {
 
             for (int j = last_orig_index; j < members.size(); j++) {
                 Account bene = members.get(j); // The latter half accounts are beneficiaries
-                makeTransaction(step, transactionAmount.doubleValue(), orig, bene);
+                makeTransaction(step, transactionAmount.doubleValue(), orig, bene, alert.isSAR(), alert.getAlertID());
             }
         }
     }
