@@ -60,7 +60,7 @@ public class StackTypology extends AMLTypology {
 
             for (int j = orig_members; j < (orig_members + mid_members); j++) {
                 Account bene = alert.getMembers().get(j);
-                makeTransaction(step, transactionAmount.doubleValue(), orig, bene);
+                makeTransaction(step, transactionAmount.doubleValue(), orig, bene, alert.isSAR(), alert.getAlertID());
             }
         }
 
@@ -75,7 +75,7 @@ public class StackTypology extends AMLTypology {
 
             for (int j = (orig_members + mid_members); j < total_members; j++) {
                 Account bene = alert.getMembers().get(j);
-                makeTransaction(step, transactionAmount.doubleValue(), orig, bene);
+                makeTransaction(step, transactionAmount.doubleValue(), orig, bene, alert.isSAR(), alert.getAlertID());
             }
         }
     }
